@@ -1,0 +1,53 @@
+.Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    height: 4rem;
+    width: 100%;
+    font-size: 1rem;
+    background-color: white;
+    box-shadow: 0px 5px 3px #999;
+}
+
+/* HEADER */
+    /* TITLE / LOGO */
+.Header .title{
+    margin-left: 3vh;
+}
+    /* NAV */
+.Header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Header nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 3vh;
+}
+.Header nav li {
+    margin-right: 20px;
+}
+.Header nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.Header nav a:hover {
+    color: red;
+}
+.Header button[type="submit"] {
+    background-color: #0077cc;
+    color: #fff;
+    border: none;
+    padding: 0px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.Header button[type="submit"]:hover {
+    background-color: #005fa3;
+}
