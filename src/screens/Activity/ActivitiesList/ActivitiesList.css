@@ -11,16 +11,15 @@ body {
 .activity-cards {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1600px;
   margin: auto;
   margin-top: 3%;
 }
 
 .activity-card {
-  width: 50%;
+  width: 70%;
   height: 200px;
   margin: 15px;
-  margin-left: 25%;
+  margin-left: 15%;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -44,6 +43,11 @@ body {
   color: inherit;
 }
 
+.pencil-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
 .icons-container {
   display: flex;
   justify-content: center;
@@ -53,4 +57,12 @@ body {
 .delete-icon {
   margin-left: 25px;
   cursor: pointer;
+}
+
+.add-activity-link {
+  text-decoration: none;
+}
+
+.add-activity-link:hover {
+  text-decoration: none;
 }
