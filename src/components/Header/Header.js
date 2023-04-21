@@ -83,7 +83,14 @@ const Header = () => {
                 </NavItem>
                 {isAuthenticated && (
                   <NavItem>
-                    
+                    <NavLink
+                      tag={RouterNavLink}
+                      to="/activities"
+                      exact
+                      activeClassName="router-link-exact-active"
+                    >
+                      Activities
+                    </NavLink>
                   </NavItem>
                 )}
               </Nav>
