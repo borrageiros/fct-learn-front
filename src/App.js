@@ -5,8 +5,6 @@ import { Container } from "reactstrap";
 
 
 import Header from "./components/Header/Header";
-import Home from "./screens/Home/Home";
-import Profile from "./screens/Profile/Profile";
 import { useAuth0 } from "@auth0/auth0-react";
 import ActivitiesList from "./screens/Activity/ActivitiesList/ActivitiesList";
 import ActivitiesEdit from "./screens/Activity/ActivitiesEdit/ActivitiesEdit";
@@ -33,8 +31,6 @@ const App = () => {
       <Header />
       <Container className="flex-grow-1 mt-5">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
           <Route path="/activities" element={<ActivitiesList />}/>
           <Route path="/activities/edit/:id" element={<ActivitiesEdit />}/>
           <Route path="/activities/create" element={<ActivitiesCreate />}/>
