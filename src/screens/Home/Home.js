@@ -35,10 +35,11 @@ function Home() {
                 Activities
               </Button>
             </Link>
-          </Col>          <Col xs="12" md="4">
+          </Col>          
+          <Col xs="12" md="4">
             <Link to="/activities/create">
               <Button className='button' color="primary" size="lg" block>
-                Create activitie
+                Create activity
               </Button>
             </Link>
           </Col>
