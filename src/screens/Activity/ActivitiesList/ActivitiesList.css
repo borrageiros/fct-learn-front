@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.activity-cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 3%;
+}
+
+.activity-card {
+  width: 70%;
+  height: 200px;
+  margin: 15px;
+  margin-left: 15%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.activity-card:hover {
+  background-color: #8d8d8dd8;
+}
+
+.activity-card h2,
+.activity-card p {
+  margin-bottom: 10px;
+}
+
+.pencil-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.pencil-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-icon {
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.add-activity-link {
+  text-decoration: none;
+}
+
+.add-activity-link:hover {
+  text-decoration: none;
+}
+
+.selected {
+  background-color: blue;
+  color: white;
+}
+
+.view-icon {
+  cursor: pointer;
+}
