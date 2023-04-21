@@ -16,6 +16,8 @@ const providerConfig = {
   authorizationParams: {
     redirect_uri: window.location.origin,
     audience: config.audience,
+    scope: "read:users read:current_user read:user_idp_tokens update:users update:users_app_metadata read:roles",
+
   },
 };
 
