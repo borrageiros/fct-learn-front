@@ -23,7 +23,7 @@ function ActivityEdit() {
         const accessToken = await getAccessTokenSilently({
           audience: 'https://fct-netex.eu.auth0.com/api/v2/',
         });
-        const response = await fetch(process.env.API_URL + "rest/activities/" + id, {
+        const response = await fetch(process.env.REACT_APP_API_URL + "rest/activities/" + id, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
@@ -51,7 +51,7 @@ function ActivityEdit() {
       const accessToken = await getAccessTokenSilently({
         audience: 'https://fct-netex.eu.auth0.com/api/v2/',
       });
-      const response = await fetch(process.env.API_URL + "rest/activities/" + id, {
+      const response = await fetch(process.env.REACT_APP_API_URL + "rest/activities/" + id, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

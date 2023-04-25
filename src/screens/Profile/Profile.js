@@ -19,7 +19,6 @@ const Profile = () => {
   // GET USER
   useEffect(() => {
     const fetchUserInfo = async () => {
-      console.log(process.env.API_URL);
       try {
 
         // Get token with scopes
@@ -36,7 +35,7 @@ const Profile = () => {
         const userInfo = await userResponse.json();
 
         // Get user roles
-        const userRolesResponse = await fetch(process.env.API_URL + "users/roles", {
+        const userRolesResponse = await fetch(process.env.REACT_APP_API_URL + "users/roles", {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
@@ -65,7 +64,7 @@ const Profile = () => {
         audience: `https://fct-netex.eu.auth0.com/api/v2/`,
       });
 
-      const response = await fetch(process.env.API_URL + "users/update-nickname", {
+      const response = await fetch(process.env.REACT_APP_API_URL + "users/update-nickname", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

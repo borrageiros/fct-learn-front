@@ -30,7 +30,7 @@ function ActivityCreate() {
       const accessToken = await getAccessTokenSilently({
         audience: "https://fct-netex.eu.auth0.com/api/v2/",
       });
-      await fetch (process.env.API_URL + "/rest/activities", {
+      await fetch (process.env.REACT_APP_API_URL + "/rest/activities", {
       method: "POST",
         headers: {
           "Content-Type": "application/json",

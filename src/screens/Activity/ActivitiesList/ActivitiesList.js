@@ -17,7 +17,7 @@ function ActivitiesList() {
         const accessToken = await getAccessTokenSilently({
           audience: 'https://fct-netex.eu.auth0.com/api/v2/',
         });
-      const response = await fetch(process.env.API_URL + "rest/activities", {
+      const response = await fetch(process.env.REACT_APP_API_URL + "rest/activities", {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -41,7 +41,7 @@ function ActivitiesList() {
         audience: 'https://fct-netex.eu.auth0.com/api/v2/',
       });
   
-      await axios.delete(process.env.API_URL + "rest/activities/" + id, {
+      await axios.delete(process.env.REACT_APP_API_URL + "rest/activities/" + id, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
