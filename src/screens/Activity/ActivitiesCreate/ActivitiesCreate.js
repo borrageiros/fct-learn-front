@@ -30,8 +30,8 @@ function ActivityCreate() {
       const accessToken = await getAccessTokenSilently({
         audience: "https://fct-netex.eu.auth0.com/api/v2/",
       });
-      await fetch (process.env.REACT_APP_API_URL + "/rest/activities", {
-      method: "POST",
+      await fetch(process.env.REACT_APP_API_URL + "rest/activities", {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${accessToken}`,
@@ -55,25 +55,30 @@ function ActivityCreate() {
               <CardBody>
                 <Form onSubmit={handleSubmit}>
                   <FormGroup>
-                    <Label for="title">Title:</Label>
+                    <Label for="title">Title: <span className="requiredCreate">*</span></Label>
                     <Input type="text" id="title" name="title" value={activity.title} onChange={handleInputChange} required />
                   </FormGroup>
                   <FormGroup>
-                    <Label for="description">Description:</Label>
-                    <Input type="text" id="description" name="description" value={activity.description} onChange={handleInputChange} required />
+                    <Label for="content">Content: <span className="requiredCreate">*</span></Label>
+                    <Input type="text" id="content" name="content" value={activity.content} onChange={handleInputChange} required />
                   </FormGroup>
                   <FormGroup>
-                    <Label for="type">Type:</Label>
+                    <Label for="type">Type: <span className="requiredCreate">*</span></Label>
                     <Input type="text" id="type" name="type" value={activity.type} onChange={handleInputChange} required />
                   </FormGroup>
                   <FormGroup>
-                    <Label for="content">Content:</Label>
-                    <Input type="text" id="content" name="content" value={activity.content} onChange={handleInputChange} required />
+                    <Label for="description">Description: </Label>
+                    <Input type="text" id="description" name="description" value={activity.description} onChange={handleInputChange} />
+                  </FormGroup>
+                  <FormGroup>
+                    <Label for="image">Image URL: </Label>
+                    <Input type="text" id="image" name="image" value={activity.image} onChange={handleInputChange} />
                   </FormGroup>
                   <Button type="submit" color="primary">
                     Create
                   </Button>
                 </Form>
+
               </CardBody>
             </Card>
           </Col>

@@ -56,7 +56,7 @@ function ActivitiesList() {
   return (
     <div>
       <div className="activity-cards">
-        <div className="activity-card">
+        <div className="activity-card2">
           <Link to="/activities/create" className="add-activity-link">
             <FontAwesomeIcon icon={faPlus} />
             <span>Add New Activity</span>
@@ -65,9 +65,10 @@ function ActivitiesList() {
         {activities.map((activity) => (
           <div className="activity-card" key={activity._id}>
             <h2>{activity.title}</h2>
-            <p>{activity.description}</p>
-            <p>{activity.type}</p>
             <p>{activity.content}</p>
+            <p>{activity.type}</p>
+            <p>{activity.description}</p>
+            <img src={activity.image}/>
             <div className="icons-container">
               <Link to={`/activities/edit/${activity._id}`} className="pencil-link">
                 <FontAwesomeIcon icon={faPencilAlt} />
