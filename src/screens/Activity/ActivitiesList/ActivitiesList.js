@@ -6,6 +6,7 @@ import axios from 'axios';
 import './ActivitiesList.css';
 import { useAuth0 } from '@auth0/auth0-react';
 
+
 function ActivitiesList() {
   const [activities, setActivities] = useState([]);
   const { getAccessTokenSilently } = useAuth0();
@@ -16,7 +17,7 @@ function ActivitiesList() {
         const accessToken = await getAccessTokenSilently({
           audience: 'https://fct-netex.eu.auth0.com/api/v2/',
         });
-      const response = await fetch('http://localhost:3001/rest/activities', {
+      const response = await fetch(process.env.API_URL + "rest/activities", {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -40,7 +41,7 @@ function ActivitiesList() {
         audience: 'https://fct-netex.eu.auth0.com/api/v2/',
       });
   
-      await axios.delete(`http://localhost:3001/rest/activities/${id}`, {
+      await axios.delete(process.env.API_URL + "rest/activities/" + id, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
