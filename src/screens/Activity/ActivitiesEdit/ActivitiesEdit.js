@@ -12,9 +12,10 @@ function ActivityEdit() {
 
   const [activity, setActivity] = useState({
     title: '',
-    description: '',
-    type: '',
     content: '',
+    type: '',
+    description: '',
+    image: '',
   });
 
   useEffect(() => {
@@ -75,20 +76,24 @@ function ActivityEdit() {
               <CardBody>
                 <Form onSubmit={handleSubmit}>
                   <FormGroup>
-                    <Label for="title">Title:</Label>
-                    <Input type="text" id="title" name="title" value={activity.title} onChange={handleInputChange} />
+                  <Label for="title">Title: <span className="requiredEdit">*</span></Label>
+                    <Input type="text" id="title" name="title" value={activity.title} onChange={handleInputChange} required/>
+                  </FormGroup>
+                  <FormGroup>
+                    <Label for="content">Content: <span className="requiredEdit">*</span></Label>
+                    <Input type="text" id="content" name="content" value={activity.content} onChange={handleInputChange} required/>
+                  </FormGroup>
+                  <FormGroup>
+                    <Label for="type">Type: <span className="requiredEdit">*</span></Label>
+                    <Input type="text" id="type" name="type" value={activity.type} onChange={handleInputChange} required/>
                   </FormGroup>
                   <FormGroup>
                     <Label for="description">Description:</Label>
                     <Input type="text" id="description" name="description" value={activity.description} onChange={handleInputChange} />
                   </FormGroup>
                   <FormGroup>
-                    <Label for="type">Type:</Label>
-                    <Input type="text" id="type" name="type" value={activity.type} onChange={handleInputChange} />
-                  </FormGroup>
-                  <FormGroup>
-                    <Label for="content">Content:</Label>
-                    <Input type="text" id="content" name="content" value={activity.content} onChange={handleInputChange} />
+                    <Label for="image">Image URL:</Label>
+                    <Input type="text" id="image" name="image" value={activity.image} onChange={handleInputChange} />
                   </FormGroup>
                   <button type="submit" className="btn btn-primary">Save Changes</button>
                 </Form>
