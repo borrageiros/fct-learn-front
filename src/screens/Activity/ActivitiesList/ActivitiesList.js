@@ -85,7 +85,7 @@ function ActivitiesList() {
   return (
     <div>
       <div className="activity-cards">
-        <div className="activity-card">
+      <div className="activity-card2">
           <Link to="/activities/create" className="add-activity-link">
             <FontAwesomeIcon icon={faPlus} />
             <span>Add New Activity</span>
