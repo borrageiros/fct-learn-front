@@ -53,10 +53,39 @@ function ActivitiesList() {
     }
   };
 
+
+  const renderOptions = (activity) => {
+    if (activity.type === 'Multiple options') {
+      return (
+        <ul>
+          {
+            activity.options.map((option, index) => (
+              <li key={index}>
+                <span style={option.correct ? { border: 'solid 0.3vh #5BD52D', padding: '2px', borderRadius: '10px' } : {}}>
+                  {String.fromCharCode(65 + index) + ') '}
+                  {option.text}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      );
+    }
+    return null;
+  };
+  
+
+  const renderTrueFalse = (activity) => {
+    if (activity.type === 'True/False') {
+      return <p>{activity.isTrue ? 'True' : 'False'}</p>;
+    }
+    return null;
+  };
+  
   return (
     <div>
       <div className="activity-cards">
-        <div className="activity-card2">
+        <div className="activity-card">
           <Link to="/activities/create" className="add-activity-link">
             <FontAwesomeIcon icon={faPlus} />
             <span>Add New Activity</span>
@@ -66,9 +95,10 @@ function ActivitiesList() {
           <div className="activity-card" key={activity._id}>
             <h2>{activity.title}</h2>
             <p>{activity.content}</p>
-            <p>{activity.type}</p>
-            <p>{activity.description}</p>
-            <img src={activity.image}/>
+            {renderTrueFalse(activity)}
+            {renderOptions(activity)}
+            {activity.description && <p>{activity.description}</p>}
+            {activity.image && <img src={activity.image} alt="" />}
             <div className="icons-container">
               <Link to={`/activities/edit/${activity._id}`} className="pencil-link">
                 <FontAwesomeIcon icon={faPencilAlt} />
