@@ -1,3 +1,27 @@
 .button {
     margin-bottom: 1rem;
 }
+
+.course-card-image {
+    max-height: 15vh;
+    height: auto;
+  }
+
+.course-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+.course-card-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.course-card {
+    transition: border 0.3s;
+}
+
+.course-card:hover {
+    border: 1px solid black;
+    cursor: pointer;
+}
+

@@ -1,21 +1,54 @@
 import './Home.css';
 import { useAuth0 } from "@auth0/auth0-react";
-import { useEffect } from 'react';
-import { Container, Row, Col, Button } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState, useEffect } from 'react';
+import { Container, Row, Col, Button, Card, CardBody, CardTitle, CardText } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 
 function Home() {
 
-  const { isAuthenticated, loginWithRedirect } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, getAccessTokenSilently } = useAuth0();
+  const [courses, setCourses] = useState();
 
   // Login with home-render
   useEffect(() => {
     if (!isAuthenticated) {
       loginWithRedirect();
     }
+
+    const fetchCourses = async () => {
+      // Get token with scopes
+      const accessToken = await getAccessTokenSilently({
+        audience: `https://fct-netex.eu.auth0.com/api/v2/`,
+      });
+
+      const coursesResponse = await fetch(process.env.REACT_APP_API_URL + "rest/courses", {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+      const courses = await coursesResponse.json();
+
+      setCourses(courses)
+    };
+
+    fetchCourses();
   }, []);
+
+  const renderCourseCard = (course) => (
+    <Col xs="12" md="4" className="mb-4">
+      <Link to={`/course/${course._id}`} className="course-card-link">
+        <Card className="text-center course-card">
+          <CardBody>
+            <CardTitle tag="h5" className="mb-3">{course.title}</CardTitle>
+            <CardText>{course.description}</CardText>
+            {course.image && <img className='course-card-image' src={course.image} alt="" />}
+          </CardBody>
+        </Card>
+      </Link>
+    </Col>
+  );
+  
 
   return (
     <div className='App'>
@@ -43,6 +76,10 @@ function Home() {
               </Button>
             </Link>
           </Col>
+        </Row>
+        <br/><br/><br/>
+        <Row>
+          {courses && courses.map(course => renderCourseCard(course))}
         </Row>
       </Container>
     </div>
