@@ -25,7 +25,7 @@ const Profile = () => {
         const accessToken = await getAccessTokenSilently({
           audience: `https://fct-netex.eu.auth0.com/api/v2/`,
         });
-
+        console.log(accessToken)
         // Get user info
         const userResponse = await fetch(`https://fct-netex.eu.auth0.com/api/v2/users/${user.sub}`, {
           headers: {
@@ -77,7 +77,7 @@ const Profile = () => {
         throw new Error(`Error updating nickname: ${response.statusText}`);
       }
 
-      alert("Nombre de usuario actualizado correctamente");
+      window.location.assign("/")
     } catch (error) {
       console.error("Error updating nickname:", error);
       alert("Error al actualizar el nombre de usuario");

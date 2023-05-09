@@ -16,6 +16,7 @@ import ActivitiesCreate from "./screens/Activity/ActivitiesCreate/ActivitiesCrea
 
 // fontawesome
 import initFontAwesome from "./utils/initFontAwesome";
+import CourseEditOrCreate from "./screens/Course/CourseEditOrCreate/CourseEditOrCreate";
 initFontAwesome();
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
           <Route path="/activities/edit/:id" element={<ActivitiesEdit />}/>
           <Route path="/activities/create" element={<ActivitiesCreate />}/>
           <Route path="/course/:id" element={<Course />}/>
+          <Route path="/course/:action/:id" element={<CourseEditOrCreate />}/>
         </Routes>
       </Container>
       </div>
