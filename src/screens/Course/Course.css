@@ -1,0 +1,153 @@
+.activity-cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 3%;
+}
+
+.activity-card {
+  width: 70%;
+  margin: 15px;
+  margin-left: 15%;
+  background-color: #ebebebd8;;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.activity-card:hover {
+  background-color: #8d8d8dd8;
+}
+
+.activity-card h2 {
+  margin: 18px;
+}
+
+.activity-card p {
+  margin-left: 18px;
+  margin-right: 18px;
+}
+
+.activity-card2{
+  width: 70%;
+  height: 20%;
+  margin: 15px;
+  margin-left: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.icons-container {
+  margin-bottom: 18px;
+}
+
+.activity-card img {
+  max-width: 20vh;
+  height: auto;
+  margin: 18px;
+}
+
+.activity-card2{
+  width: 70%;
+  height: 20%;
+  margin: 15px;
+  margin-left: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.pencil-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.pencil-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-icon {
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.add-activity-link {
+  text-decoration: none;
+}
+
+.add-activity-link:hover {
+  text-decoration: none;
+}
+
+.selected {
+  background-color: blue;
+  color: white;
+}
+
+.view-icon {
+  cursor: pointer;
+}
+
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100% - 1rem);
+  height: 100px;
+}
+
+.activity-list {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  list-style-type: none;
+}
+.activity-list-container {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 10px;
+}
+.activity-list li:last-child {
+  margin-bottom: 100px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 6px 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.custom-modal .modal-content {
+  width: 600px;
+  height: 500px;
+  overflow-y: hidden;
+}
+
+.custom-modal .modal-dialog {
+  margin: 30px auto;
+}
+.custom-modal .modal-footer {
+  position: sticky;
+  bottom: 0;
+  background-color: #f8f9fa;
+}

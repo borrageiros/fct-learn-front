@@ -9,12 +9,14 @@ import Header from "./components/Header/Header";
 import Home from "./screens/Home/Home";
 
 import Profile from "./screens/Profile/Profile";
+import Course from "./screens/Course/Course";
 import ActivitiesList from "./screens/Activity/ActivitiesList/ActivitiesList";
 import ActivitiesEdit from "./screens/Activity/ActivitiesEdit/ActivitiesEdit";
 import ActivitiesCreate from "./screens/Activity/ActivitiesCreate/ActivitiesCreate";
 
 // fontawesome
 import initFontAwesome from "./utils/initFontAwesome";
+import CourseEditOrCreate from "./screens/Course/CourseEditOrCreate/CourseEditOrCreate";
 initFontAwesome();
 
 const App = () => {
@@ -39,6 +41,8 @@ const App = () => {
           <Route path="/activities" element={<ActivitiesList />}/>
           <Route path="/activities/edit/:id" element={<ActivitiesEdit />}/>
           <Route path="/activities/create" element={<ActivitiesCreate />}/>
+          <Route path="/course/:id" element={<Course />}/>
+          <Route path="/course/:action/:id" element={<CourseEditOrCreate />}/>
         </Routes>
       </Container>
       </div>
