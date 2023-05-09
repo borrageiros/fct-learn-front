@@ -72,7 +72,7 @@ const Header = () => {
 
     return (
       <div className="nav-container">
-        <Navbar color="light" light expand="md">
+        <Navbar color="light" light expand="md" className="fixed-top">
           <Container>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
