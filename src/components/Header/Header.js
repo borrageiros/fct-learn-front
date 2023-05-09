@@ -12,6 +12,7 @@ import {
   NavLink,
   Button,
   UncontrolledDropdown,
+  Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
@@ -31,6 +32,11 @@ const Header = () => {
   } = useAuth0();
   const toggle = () => setIsOpen(!isOpen);
   const [userInfo, setUserInfo] = useState(null);
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
 
 
   useEffect(() => {
@@ -82,6 +88,7 @@ const Header = () => {
                   </NavLink>
                 </NavItem>
                 {isAuthenticated && (
+                  <>
                   <NavItem>
                     <NavLink
                       tag={RouterNavLink}
@@ -92,9 +99,23 @@ const Header = () => {
                       Activities
                     </NavLink>
                   </NavItem>
+                  <Dropdown nav isOpen={dropdownOpen} toggle={toggleDropdown}>
+                    <DropdownToggle nav caret>
+                      New
+                    </DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem tag={RouterNavLink} to="/course/create/0" activeClassName="router-link-exact-active">
+                        Course
+                      </DropdownItem>
+                      <DropdownItem tag={RouterNavLink} to="/activities/create" activeClassName="router-link-exact-active">
+                        Activity
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                  </>
                 )}
               </Nav>
-              
+      
               <Nav className="d-none d-md-block" navbar>
                 {!isAuthenticated && (
                   <NavItem>
