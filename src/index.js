@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
@@ -7,8 +7,6 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import { getConfig } from "./config";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-// https://auth0.github.io/auth0-react/interfaces/Auth0ProviderOptions.html
 const config = getConfig();
 
 const providerConfig = {
@@ -18,17 +16,16 @@ const providerConfig = {
     redirect_uri: window.location.origin,
     audience: config.audience,
     scope: "read:users read:current_user read:user_idp_tokens update:users update:users_app_metadata read:roles",
-
   },
 };
 
-ReactDOM.render(
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+root.render(
   <Auth0Provider {...providerConfig}>
     <App />
-  </Auth0Provider>,
-  document.getElementById("root")
+  </Auth0Provider>
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below.
 serviceWorker.unregister();

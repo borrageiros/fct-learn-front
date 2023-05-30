@@ -81,8 +81,7 @@ const Header = () => {
                   <NavLink
                     tag={RouterNavLink}
                     to="/"
-                    exact
-                    activeClassName="router-link-exact-active"
+                    
                   >
                     Home
                   </NavLink>
@@ -93,8 +92,8 @@ const Header = () => {
                     <NavLink
                       tag={RouterNavLink}
                       to="/activities"
-                      exact
-                      activeClassName="router-link-exact-active"
+
+                      
                     >
                       Activities
                     </NavLink>
@@ -104,10 +103,10 @@ const Header = () => {
                       New
                     </DropdownToggle>
                     <DropdownMenu>
-                      <DropdownItem tag={RouterNavLink} to="/course/create/0" activeClassName="router-link-exact-active">
+                      <DropdownItem tag={RouterNavLink} to="/course/create/0" >
                         Course
                       </DropdownItem>
-                      <DropdownItem tag={RouterNavLink} to="/activities/create" activeClassName="router-link-exact-active">
+                      <DropdownItem tag={RouterNavLink} to="/activities/create" >
                         Activity
                       </DropdownItem>
                     </DropdownMenu>
@@ -145,7 +144,7 @@ const Header = () => {
                         tag={RouterNavLink}
                         to="/profile"
                         className="dropdown-profile"
-                        activeClassName="router-link-exact-active"
+                        
                       >
                         <FontAwesomeIcon icon="user" className="mr-3" /> Profile
                       </DropdownItem>
@@ -195,7 +194,7 @@ const Header = () => {
                     <FontAwesomeIcon icon="user" className="mr-3" />
                     <RouterNavLink
                       to="/profile"
-                      activeClassName="router-link-exact-active"
+                      
                     >
                       Profile
                     </RouterNavLink>

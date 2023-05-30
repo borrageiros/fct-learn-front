@@ -64,7 +64,7 @@ function Home() {
       <Container>
         <Row>
           {courses && courses.map(course => (
-              <Col xs="12" md="4" className="mb-4">
+              <Col xs="12" md="4" className="mb-4" key={course._id}>
                 <Link to={`/course/${course._id}`} className="course-card-link">
                   <Card className="text-center course-card">
                     <CardBody>
