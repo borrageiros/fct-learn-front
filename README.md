@@ -56,6 +56,10 @@ Instalación:
 
 		npm install
 
+Creación de archivo ".env":
+
+		REACT_APP_API_URL=https://vm15.netexlearning.cloud/
+		
 Para desarrollo:
 
 		npm run start
