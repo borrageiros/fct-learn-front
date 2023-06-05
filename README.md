@@ -9,7 +9,7 @@ Se divide en dos componentes principales: una aplicación móvil, destinada a lo
 
 La aplicación móvil permitirá a los estudiantes acceder y participar en cursos y actividades. Por otro lado, la página web administrativa proporcionará a los profesores las herramientas necesarias para gestionar y administrar su contenido. Podrán añadir, modificar y eliminar cursos y actividades, asegurando así un control completo sobre el contenido educativo.
 # 
-####Tipos de actividades
+#### Tipos de actividades
 
 - **Texto:** Son preguntas simples que esperan una respuesta simple o a desarrollar, estas serán corregidas por inteligencia artificial con la tecnología de Openai
 - **Verdadero/Falso:** Tipo test
@@ -18,14 +18,14 @@ La aplicación móvil permitirá a los estudiantes acceder y participar en curso
 
 
 # 
-####Requisitos 
+#### Requisitos 
 
 La web podrá ser desplegada en un servidor web convenvional como apache o nginx
 
 
 
 # 
-####Arquitectura software
+#### Arquitectura software
 
 El proyecto se basa en 5 "componentes/pantallas" principales, que constan de:
 
@@ -40,8 +40,8 @@ El proyecto se basa en 5 "componentes/pantallas" principales, que constan de:
 - Actividades: Está subdividido en 3 funciones que equivalen a distintas pantallas; una que muestra todas las actividades, otra para crearlas y finalmente para editarlas.
 
 - Cursos: Los cursos siguen la misma lógica que las actividades salvo por una excepción, esta vez el componente de crear y editar lo fusionamos en una sóla función para hacer el código menos extenso, esto lo logramos con un parámetro URL que le dice al componente cúal de las dos acciones se quiere realizar. Ejemplo:
-
-https://…/course/edit/64537f0302a47fd84208a0e7
+  
+https://…/course/edit/64537f0302a47fd84208a0e7  
 https://…/course/create/0
 
 - Home: Es nuestra pantalla principal, desde aquí puedes acceder al listado de cursos, editarlos o borrarlos, a su vez el Header permite realizar todas las acciones globales que comentamos. Éste componente también se asegura de que el usuario esté logueado; si no es el caso redirige al servicio privado de Auth0 para nuestra aplicación
@@ -51,7 +51,7 @@ https://…/course/create/0
 
 
 # 
-####Instalación
+#### Instalación
 Instalación:
 
 		npm install
@@ -65,6 +65,6 @@ Para producción:
 		npm run build
 
 # 
-####Demo
-WEB: https://learn.borrageiros.com/
+#### Demo  
+WEB: https://learn.borrageiros.com/  
 API: https://vm15.netexlearning.cloud/
